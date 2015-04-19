@@ -3,6 +3,12 @@
 # jtmcquillan@uta.edu
 # April 19th, 2015
 
+# Install dplyr and its depnedencies
+install.packages("dplyr", dependencies = TRUE)
+
+# Load dplyr with its dependencies
+library("dplyr")
+
 # Read in data as tab-delimited
 gap.in = read.table("output/combined_gapMinder.tsv", sep = "\t", header=TRUE)
 
