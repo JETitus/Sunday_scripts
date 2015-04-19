@@ -1,0 +1,44 @@
+---
+title: "Report Gapminder"
+author: "JET"
+date: "April 19, 2015"
+output: html_document
+---
+
+```{r}
+
+# Load dplyr with its dependencies
+library("dplyr")
+
+# Read in data as tab-delimited
+gap.in = read.table("output/combined_gapMinder.tsv", sep = "\t", header=TRUE)
+
+# Filter countries of interest into objects
+gap.in %>%
+  filter(country == "Djibouti") -> Djibouti
+gap.in %>%
+  filter(country == "Albania") -> Albania
+gap.in %>%
+  filter(country == "Spain") -> Spain
+```
+
+```{r}
+plot(Djibouti$year, Djibouti$gdpPercap, main = "Djibouti", xlab = "Year", ylab = "GDP Per Capita")
+```
+
+
+The 1970's where the rise and fall of this East African country.
+
+```{r}
+plot(Albania$year, Albania$gdpPercap, main = "Albania", xlab = "Year", ylab = "GDP Per Capita")
+```
+
+
+After the Yugslovian genocide, Albania's GDP rises substaintially.
+
+```{r}
+plot(Spain$year, Spain$gdpPercap, main = "Spain", xlab = "Year", ylab = "GDP Per Capita")
+```
+
+
+Spain continues to raise its GDP till it becomes the Inquisition again.
