@@ -21,8 +21,12 @@ gap.in %>%
 
 # Challange
 # Calc the mean pop per continent per years for years prior to 1990
-
-
+gap.in %>%
+  filter(year<1990) %>%
+  select(continent, year, pop) %>%
+  group_by(continent,year) %>%
+  summarize(mean=mean(pop)) %>%
+  as.data.frame -> data.out
 
 for (row.number in 1:10){
   for (col.number in 1:5){
