@@ -18,5 +18,15 @@ plot(Djibouti$year, Djibouti$gdpPercap, main = "Djibouti", xlab = "Year", ylab =
 plot(Albania$year, Albania$gdpPercap, main = "Albania", xlab = "Year", ylab = "GDP Per Capita")
 plot(Spain$year, Spain$gdpPercap, main = "Spain", xlab = "Year", ylab = "GDP Per Capita")
 
-
-
+gap.in %>%
+  select(continent, lifeExp) %>%
+  group_by(continent) %>%
+  summarize("mean Life Exp" = mean(lifeExp))
+gap.in %>%
+  select(continent, lifeExp) %>%
+  group_by(continent) %>%
+  summarize("min Life Exp" = min(lifeExp))
+gap.in %>%
+  select(continent, lifeExp) %>%
+  group_by(continent) %>%
+  summarize("max Life Exp" = max(lifeExp))
