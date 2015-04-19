@@ -28,6 +28,14 @@ gap.in %>%
   summarize(mean=mean(pop)) %>%
   as.data.frame -> data.out
 
+attach(iris)
+# install.packages("tidyr", dependencies = TRUE)
+# open Tidyr
+library("tidyr")
+
+iris.long = gather(iris, "Measurement", "Value", 1:4)
+View(iris.long)
+
 for (row.number in 1:10){
   for (col.number in 1:5){
     print(gap.in[row.number,col.number])
